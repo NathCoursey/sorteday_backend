@@ -16,5 +16,3 @@ class About(View):
 class TaskView(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
     queryset = Task.objects.all()
-
-

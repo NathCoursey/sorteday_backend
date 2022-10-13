@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -8,6 +9,7 @@ class Task(models.Model):
     description = models.TextField(max_length=500)
     date = models.DateField(default=datetime.today)
     completed = models.BooleanField(default=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.title
