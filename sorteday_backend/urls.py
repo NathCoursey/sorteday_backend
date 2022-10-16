@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from main_app import views
+from rest_framework.authtoken.views import obtain_auth_token
 
 router = routers.DefaultRouter()
 router.register(r'tasks', views.TaskView, 'task')
@@ -25,5 +26,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main_app.urls')),
     path('api/', include(router.urls)),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('auth/', obtain_auth_token),
 ]
