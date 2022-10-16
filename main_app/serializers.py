@@ -1,5 +1,7 @@
 from rest_framework import serializers
-from .models import Task, User
+from .models import Task
+from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:

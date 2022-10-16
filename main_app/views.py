@@ -22,6 +22,6 @@ class TaskView(viewsets.ModelViewSet):
     # authentication_classes = [TokenAuthentication, ]
     # permission_classes = [IsAuthenticated, ]
 
-class UserViewSet(viewsets.ModelViewSet):
+class UserView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
