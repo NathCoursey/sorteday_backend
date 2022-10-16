@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
 from main_app import views
+from main_app.views import task_detail, task_list
 from rest_framework.authtoken.views import obtain_auth_token
 
 router = routers.DefaultRouter()
@@ -27,5 +28,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main_app.urls')),
     path('api/', include(router.urls)),
+    path('api/tasks/<int:id>', task_detail, name="detail"),
     path('auth/', obtain_auth_token),
 ]
